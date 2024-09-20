@@ -2,10 +2,10 @@
     /* --color-primary-dark: #202020; */
     --color-primary-dark: #161616;
     --color-primary: #007bff;
-    --color-primary-light: #add8e6;
+    --color-primary-light: #f7f7f7;
     
     --color-secondary-dark: #004d00;
-    --color-secondary: #40e0d0;
+    --color-secondary: #31ca67;
     --color-secondary-light: #80e0a1;
     
     --color-accent: #fcb900;
@@ -33,6 +33,7 @@ html{
 body{
     font-family: 'Nunito', sans-serif;
     position: relative;
+    overflow: hidden;
     /* background-color: var(--color-primary-dark); */
     /* overflow-x: hidden; */
 }
@@ -105,7 +106,7 @@ a{
     display: none;
 }
 .topnav, .nav{
-    color: rgb(170, 170, 170);
+    color: rgb(216, 216, 216);
     font-family: "Asap", sans-serif;
 }
 .topnav ul li i:hover,
@@ -117,7 +118,7 @@ nav a.active {
     color: var(--color-accent); 
 }
 .nav-scrolled{
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(10px);
     color: var(--color-primary-dark);
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
@@ -205,8 +206,8 @@ nav a.active {
     font-size: 1.5rem;
 }
 .h-md{
-    font-weight: 400;
-    font-size: 1.8rem;
+    font-weight: 600;
+    font-size: 1.7rem;
     font-family: "Asap", sans-serif;
     line-height: 1.2;
 }
@@ -227,11 +228,15 @@ nav a.active {
 }
 .p-xs{
     font-size: 0.95rem;
+    font-weight: 200;
     line-height: 1.5 !important;
 }
 .p-sm{
     font-size: 1.1rem;
     line-height: 1.5 !important;
+}
+.p-sm.font-caveat{
+    font-size: 1.4rem;
 }
 .text-accent{
     color: var(--color-accent);
@@ -362,6 +367,9 @@ nav a.active {
     padding-top: 8rem;
     padding-bottom: 8rem;
 }
+.bg-primary-light{
+    background-color: var(--color-primary-light);
+}
 .scrollbar-custom::-webkit-scrollbar {
     width: 4px;
     height: 5px;
@@ -449,6 +457,12 @@ a .btn {
 }
 .btn-accent-fill{
     background: var(--color-accent) !important;
+    color: white !important;
+    font-weight: 600;
+    border: none;
+}
+.btn-accent-alt-fill{
+    background: var(--color-accent-alt) !important;
     color: white !important;
     font-weight: 600;
     border: none;
@@ -808,26 +822,26 @@ a .btn {
     padding: 2rem 1rem;
 }
 .validation-error{
-    color: #c60229;
+    color: var(--color-accent-alt);
 }
 .validation-error-icon{
-    border-left: 5px solid red;
+    border-left: 5px solid var(--color-accent-alt);
     padding: 1rem 0;
 }
 .validation-error-icon i{
-    color: #c60229;
+    color: var(--color-accent-alt);
 }
 .validation-success{
     width: 100%;
     padding: 1rem;
-    color: var(--light-blue);
+    color: var(--color-primary);
 }
 .validation-success-icon{
-    border-left: 5px solid var(--light-blue);
+    border-left: 5px var(--color-primary);
     padding: 1rem 0;
 }
 .validation-success-icon i{
-    color: var(--light-blue);
+    color: var(--color-primary);
 }
 
 .hover-accent:hover{
@@ -1051,6 +1065,12 @@ footer .company-info .contact-item{
     .p-sm{
         font-size: 1rem !important;
     }
+    .p-sm.font-caveat{
+        font-size: 1.2rem;
+    }
+    .p-xs{
+        font-size: 0.85rem;
+    }
     .cs-section{
         padding-top: 5rem;
         padding-bottom: 5rem;
@@ -1179,6 +1199,12 @@ footer .company-info .contact-item{
     }
     .p-sm{
         font-size: 0.95rem !important;
+    }
+    .p-sm.font-caveat{
+        font-size: 1.1rem;
+    }
+    .p-xs{
+        font-size: 0.8rem;
     }
     /* .hero{
         min-height: 60vh;

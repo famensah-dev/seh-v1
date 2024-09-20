@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->send();
 
             $response['success'] = true;
-            $response['message'] = "Message sent! We'll get in touch!";
+            $response['message'] = "Thank you for reaching out to us! We have received your message and will get back to you as soon as possible.";
         } catch (Exception $e) {
             $response['message'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }

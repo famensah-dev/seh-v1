@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const topnavMenu = document.querySelector('.alt-topnav');
     let topnavMenuOpen = false;
     
+
     topnavBtn.addEventListener('click', function(){
       if(!topnavMenuOpen){
         topnavBtn.classList.add('open')
@@ -138,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
 
+
     // close nav menu when user clicks outside of it
     document.addEventListener('click', function(event) {
       const isClickInsideNav = navMenu.contains(event.target);
@@ -148,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     
-    // keep the year in the footer up to date
+    // Keep the year in the footer up to date
     const currentDate = new Date();
     const currentDateElement = document.getElementById('currentDate');
     currentDateElement.textContent = currentDate.getFullYear();
@@ -159,12 +161,13 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollUpBtn.addEventListener('click', scrollToSection)
 
      window.onscroll = function() {
-       if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+       if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
          scrollUpBtn.classList.add('fade-in');
        } else {
         scrollUpBtn.classList.remove('fade-in');
       }
      };
+
 
     window.addEventListener('scroll', function () {
       if (window.scrollY > navbar.offsetHeight - 30) {
@@ -173,6 +176,16 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar.classList.remove('nav-scrolled');
       }
     });
+
+
+    // Hide scrollUp button when input box is in focus
+    const formElements = document.querySelectorAll('input');
+    formElements.forEach(element => {
+      element.addEventListener('focus', function() {
+        document.getElementById("scrollUpBtn").classList.remove('fade-in');
+      });
+    });
+
 
     // Loop through each link and check if it matches the current URL
     navLinks.forEach(function(link) {

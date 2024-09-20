@@ -1,80 +1,49 @@
+<!-- layout -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Fruitful Vine Homecare</title>
+    <title><?php echo isset($title) ? $title : 'Social Empowerment Hub'; ?></title>
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../assets/css/style.css"/>
-    <link rel="stylesheet" href="../assets/css/about.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    <script src="../assets/js/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
-    <section class="topnav">
-        <div class="container flex">
-            <ul class="contact-links flex gap-md">
-                <li>
-                    <span><i class="uil uil-phone-alt"></i></span>
-                    <span>+233 564 871 109</span>
-                </li>
-                <li>
-                    <span><i class="uil uil-map-marker"></i></span>
-                    <span>Location, Area City</span>
-                </li>
-            </ul>
-
-            <ul class="social-media-links flex gap">
-                <li><i class="uil uil-facebook-f"></i></li>
-                <li><i class="uil uil-twitter"></i></li>
-                <li><i class="uil uil-instagram"></i></li>
-                <li><i class="uil uil-whatsapp"></i></li>
-            </ul>
-        </div>
-    </section>
-
-    <nav id="navbar" class="nav">
-        <div class="container space-between">
-            <div class="flex">
-                <i class="uil uil-bars" id="nav-menu-icon"></i>
-                <p id="logo">Logo</p>
-            </div>
-            <ul class="navlinks flex gap-md">
-                <li><a href="home" class="active">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="contact">Contact</a></li>
-            </ul>
-            <i class="uil uil-ellipsis-v" id="topnav-menu-icon"></i>
-        </div>
-    </nav>
-
-    <div id="alertBox">
-        <!-- <span class="validation-success-icon"><i class="uil uil-exclamation-circle"></i></span>
-        <span class="validation-success">Lorem ipsum dolor sit amet consectetur.</span> -->
-    </div>
-
-    <section class="about-bg-image">
-        <div class="container">
-
-        </div>        
-    </section>
+    <!-- Header -->
+    <?php include('partials/_header.php') ?>
+    <!-- EndHeader -->
     
+    <!-- Main -->
+    <?php include $content; ?>
+    <!-- EndMain -->
 
+    <!-- Footer -->
+    <?php include('partials/_footer.php') ?>
+    <!-- EndFooter -->
+
+    <a href="#home" id="scrollUpBtn" class="btn btn-accent-alt-fill scroll-up-btn">
+        <i class="uil uil-angle-up"></i>
+    </a>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
-
-
-
-
-    
-
-
     <script>
+        AOS.init();
         const alertBox = document.getElementById('alertBox');
 
         function validateForm() {
@@ -157,6 +126,17 @@
             element.classList.remove('btn-loading');
             }
         }
+        
     </script>
+
+    <?php if (isset($pageSpecificJs) && !empty($pageSpecificJs)): ?>
+        <script src="<?php echo htmlspecialchars($pageSpecificJs); ?>"></script>
+    <?php endif; ?>
+
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+     </script> -->
+    
 </body>
 </html>
