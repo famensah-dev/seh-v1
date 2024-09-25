@@ -1,6 +1,7 @@
 <!-- Services -->
 <?php
-    $pageSpecificJs = '../assets/js/extra.js'; // Set the page Specific JS
+    $pageSpecificJs = '../assets/js/extra.js'; 
+    include __DIR__ . '/../db_files/services-data.php'; 
 ?>
 
 <style>
@@ -32,16 +33,16 @@
 .media-card {
     position: relative;
     width: 100%;
-    max-width: 238px;
-    min-width: 238px;
-    height: 363px;
+    max-width: 280px;
+    min-width: 280px;
+    height: 380px;
     margin-top: 4px;
     transition: margin-top 0.3s ease-in-out;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     display: flex;
     align-items: flex-end;
     scroll-snap-align: start;
@@ -52,13 +53,13 @@
 }
 
 .media-card .card-content {
-    height: 50%;
+    height: 70%;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 20px 15px 30px 15px;
-    background: linear-gradient(to top, rgba(133, 141, 155, 0.7), rgba(0, 0, 0, 0)); /* Gradient overlay */
+    background: linear-gradient(to top, rgba(22, 22, 22, 0.85), rgba(0, 0, 0, 0)); /* Gradient overlay */
     color: white;
     display: flex;
     flex-direction: column;
@@ -78,6 +79,7 @@
 
 .scroll-snap-container {
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; 
     gap: 1rem;
 }
 
@@ -92,10 +94,10 @@
 }
 
 .scroll-button{
-    max-width: 70px;
-    max-height: 70px;
-    min-width: 70px;
-    min-height: 70px;
+    max-width: 4rem;
+    max-height: 4rem;
+    min-width: 4rem;
+    min-height: 4rem;
     border-radius: 50%;
     border: none;
     background-color: white;
@@ -116,20 +118,20 @@
 }
 
 
+
 @media (max-width: 767px) {
     .media-card {
         width: 80%;
-        background-size: cover;
     }
-}
-
-
-
-@media (max-width: 767px) {
     .circle{
         width: 20px;
         height: 20px;
         font-size: 11px;
+    }
+
+    .scroll-buttons-container{
+        width: 100%;
+        left: -1rem;
     }
 
     .grid.four-columns.even{
@@ -138,6 +140,18 @@
 }
 
 @media (max-width: 360px) {
+    .media-card{
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .scroll-snap-container {
+        gap: 0.5rem;
+    }
+
+    .scroll-buttons-container{
+        width: 110%;
+    }
+
     .grid.four-columns.even{
         grid-template-columns: repeat(1, 1fr);
     }
@@ -148,7 +162,7 @@
     <div class="container">
         <div class="content container flex-col gap-lg">
             <div class="text-center d-flex flex-column align-items-center" style="gap: 1rem;">
-                <h2 class="h-md font-caveat">Our Services</h2>
+                <h2 class="h-xs">Our Services</h2>
                 <div class="hr hr-md hr-accent hr-thick"></div>
                 <h3 class="h-md">Unlock Your True Potential with Our Personalized Coaching Services</h3>
             </div>
@@ -160,36 +174,19 @@
                     <button id="scroll-right-button" class="scroll-button"><i class="uil uil-angle-right-b"></i></button>
                 </div>
                 <div class="position-relative d-flex flex-nowrap scrollbar-custom scroll-snap-container scroll-container ml-2 py-4" style="overflow-x:auto; gap:1.5rem;">
-                    <div class="media-card scroll-item" style="background: url();">
-                        <div class="card-content">
-                            <h3 class="card-title">Card Title 1</h3>
-                            <p class="card-description">This is some descriptive text that goes inside the card.</p>
-                        </div>
-                    </div>
-                    <div class="media-card scroll-item" style="background: url();">
-                        <div class="card-content">
-                            <h3 class="card-title">Card Title 2</h3>
-                            <p class="card-description">This is some descriptive text that goes inside the card.</p>
-                        </div>
-                    </div>
-                    <div class="media-card scroll-item" style="background: url();">
-                        <div class="card-content">
-                            <h3 class="card-title">Card Title 3</h3>
-                            <p class="card-description">This is some descriptive text that goes inside the card.</p>
-                        </div>
-                    </div>
-                    <div class="media-card scroll-item" style="background: url();">
-                        <div class="card-content">
-                            <h3 class="card-title">Card Title 4</h3>
-                            <p class="card-description">This is some descriptive text that goes inside the card.</p>
-                        </div>
-                    </div>
-                    <div class="media-card scroll-item" style="background: url();">
+
+                <?php
+                    foreach ($services as $data) {
+                        include 'components/media-card.php';
+                    }
+                ?>
+                    
+                    <!-- <div class="media-card scroll-item" style="background: url();">
                         <div class="card-content">
                             <h3 class="card-title">Card Title 5</h3>
                             <p class="card-description">This is some descriptive text that goes inside the card.</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

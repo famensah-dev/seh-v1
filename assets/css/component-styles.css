@@ -1,0 +1,191 @@
+.icon-card{
+    width: 100%;
+    max-width: 500px;
+    /* max-width: 100%; */
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background: white !important;
+    padding: 1rem .5rem;
+    border-radius: .7rem;
+}
+.icon-card .card-icon{
+    width: 80px;
+    height: 80px;
+    flex: 0 0 80px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: var(--color-primary-light);
+    /* background-color: rgba(89, 149, 240, 0.1); */
+    border-radius: 100%;
+}
+.icon-card .card-image{
+    width: 90px;
+    height: 90px;
+    flex: 0 0 90px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 100%;
+}
+
+.icon-card .card-details{
+    font-size: .7rem;
+    text-transform: uppercase;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.scroll-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1rem 1.5rem 3rem 1.5rem;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.scroll-carousel .custom-card{
+    scroll-snap-align: center;
+    transform: scale(0.7);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background-color: #000;
+}
+
+.custom-card.testimonial{
+    width: calc(33% - 1rem);
+    min-width: 500px;
+    padding: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    border-radius: 0.5rem;
+}
+
+.custom-card.testimonial .card-image{
+    width: 70px;
+    height: 70px;
+    flex: 0 0 70px;
+    font-size: clamp(1rem, 8vw, 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-light);
+    border-radius: 100%;
+}
+
+.custom-card.testimonial .card-content, 
+.custom-card.testimonial .card-footer{
+    z-index: 1;
+}
+
+.custom-card.testimonial i{
+    opacity: 0.5;
+}
+
+.custom-card.active {
+    transform: scale(0.95);
+    opacity: 1;
+}
+
+.custom-card.testimonial.active{
+    background-color: var(--color-primary-dark);
+    color: white;
+}
+.custom-card.testimonial.active .quarter-circle{
+    opacity: 0.12;
+}
+.custom-card.testimonial.active i{
+    opacity: 1;
+    color: var(--color-primary-dark);
+}
+
+.custom-card.testimonial.active .card-image{
+    opacity: 0.6;
+}
+
+.quarter-circle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    height: 220px;
+    background-color: var(--color-primary-light);
+    border-top-left-radius: 100%; 
+    overflow: hidden;
+    opacity: 0.7;
+    /* background-color: #3498db;  */
+    /* clip-path: polygon(0 0, 100% 50%, 100% 100%); */
+    /* clip-path: polygon(100% 100%, 0 100%, 100% 0); */
+}
+
+
+
+
+
+/* ================================================================
+======================== Mobile View ==============================
+==================================================================*/
+@media (max-width: 767px) {
+    .icon-card{
+        padding: 1rem;
+    }
+    .icon-card .card-icon{
+        width: 70px;
+        height: 70px;
+        flex: 0 0 70px;
+    }
+    .icon-card .card-title p{
+        font-size: .9rem;
+    }
+    .custom-card.testimonial{
+        min-width: 100%;
+        padding: 1.5rem 1rem;
+    }
+    .custom-card.testimonial .card-image{
+        width: 60px;
+        height: 60px;
+        flex: 0 0 60px;
+    }
+}
+
+@media (max-width: 360px) {
+    .scroll-carousel{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .custom-card.testimonial .card-image{
+        display: none;
+    }
+}

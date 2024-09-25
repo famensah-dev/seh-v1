@@ -42,7 +42,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">Community Support</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="../contact.php">Contact</a></li>
                 <li><a href="#contact" class="text-accent-alt">Donate</a></li>
             </ul>
             <i class="uil uil-ellipsis-v" id="topnav-menu-icon"></i>
@@ -74,7 +74,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">Community Support</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="../contact.php">Contact</a></li>
             </ul>
         </div>
     </div>

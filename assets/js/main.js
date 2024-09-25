@@ -197,5 +197,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
+    // Remove interfering Javascript from all links
+    document.querySelector('a').addEventListener('click', function(event) {
+        event.preventDefault(); // This will stop the link from working
+    });
+
   });
   
