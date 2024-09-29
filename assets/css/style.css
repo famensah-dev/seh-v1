@@ -1,6 +1,7 @@
 :root {
     /* --color-primary-dark: #202020; */
     --color-primary-dark: #161616;
+    --color-primary-dark-alt: #212529;
     --color-primary: #007bff;
     --color-primary-light: #f7f7f7;
     
@@ -924,6 +925,12 @@ footer .claims{
 footer .company-info .contact-item{
     display: flex;
     justify-content: start;
+}
+.custom-card{
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
 }
 .scroll-up-btn{
     width: 4rem;

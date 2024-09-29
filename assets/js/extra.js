@@ -24,6 +24,43 @@ function scrollRight() {
 }
 
 
+// function scrollRight() {
+//     const scrollContainer = document.querySelector('.scroll-container');
+//     if (scrollContainer.scrollLeft + scrollContainer.offsetWidth >= scrollContainer.scrollWidth) {
+//         scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+//     } else {
+//         scrollContainer.scrollBy({ left: scrollContainer.offsetWidth, behavior: 'smooth' });
+//     }
+// }
+
+// setInterval(scrollRight, 10000);
+
+function autoScrollRight() {
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (scrollContainer.scrollLeft + scrollContainer.offsetWidth >= scrollContainer.scrollWidth) {
+        scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+        scrollContainer.scrollBy({ left: scrollContainer.offsetWidth, behavior: 'smooth' });
+    }
+}
+
+function setScrollInterval() {
+    let interval;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+        interval = 8000; // 3 seconds for mobile
+    } else {
+        interval = 15000; // 5 seconds for desktop
+    }
+
+    setInterval(autoScrollRight, interval);
+}
+
+setScrollInterval();
+window.addEventListener('resize', setScrollInterval);
+
+
 // const cards = document.querySelectorAll('.card-testimonial');
 // const indicators = document.querySelectorAll('.indicator');
 // let currentIndex = 0;
@@ -94,7 +131,7 @@ indicators.forEach((indicator) => {
 });
 
 // Start automatic scrolling
-setInterval(autoScroll, 15000); // Scroll every 10 seconds
+setInterval(autoScroll, 10000); // Scroll every 10 seconds
 
 // Initialize the first card as active
 setActiveCard(currentIndex);

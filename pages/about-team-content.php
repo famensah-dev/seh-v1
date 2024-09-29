@@ -120,7 +120,7 @@
 
 <!-- Contact Content -->
 <?php
-$pageTitle = 'About Us'; 
+$pageTitle = 'Meet the Team'; 
 $heroImage = '../assets/img/counsel.jpg'; 
 
 include 'partials/_page-hero.php';
@@ -128,7 +128,7 @@ include 'partials/_page-hero.php';
 
 <!-- About Us -->
 <section class="cs-section">
-<div class="container" style="width: 70%;">
+<div class="container" style="width: 70%;;">
     <h2 class="text-center">
     <span class="text-accent">Empowering</span> individuals to reach their full potential and make a positive community impact.
     </h2>

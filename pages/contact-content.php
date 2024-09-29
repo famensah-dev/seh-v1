@@ -50,11 +50,11 @@
 $pageTitle = 'Contact Us'; 
 $heroImage = '../assets/img/contact-img.jpg'; 
 
-include 'partials/page-hero.php';
+include 'partials/_page-hero.php';
 ?>
 
 <!-- Contact Us -->
-<section id="contact" class="cs-section contact-us">
+<section id="contact" class="cs-section contact-us" style="padding-bottom: 0;">
     <div class="container flex-col gap align-center">
         <div class="text-center flex-col justify-center align-center gap">
             <h3 class="h-md py-2">We'd love to hear from you! Reach out to us anytime.</h3>
@@ -96,12 +96,6 @@ include 'partials/page-hero.php';
                         <li><i class="uil uil-whatsapp hover-accent"></i></li>
                     </ul>
                 </div>
-                <gmp-map
-                center="37.4220656,-122.0840897"
-                zoom="10"
-                map-id="DEMO_MAP_ID"
-                style="height: 400px"
-                ></gmp-map>
                 <!-- <p class="p-sm text-white" style="width: 50%;">Our dedicated team is here to assist you with any queries you may have regarding our services or anything else. </p> -->
             </div>  
             <hr class="hr-y" style="background-color: rgba(0, 0, 0, 0.3);">
@@ -135,7 +129,13 @@ include 'partials/page-hero.php';
 <!-- Contact Us End -->
 
 <section>
-
+    <!-- <gmp-map
+        center="37.4220656,-122.0840897"
+        zoom="10"
+        map-id="DEMO_MAP_ID"
+        style="height: 400px"
+        ></gmp-map> -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.2869323481086!2d-0.15828452496660425!3d5.671591594309971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9d995380f175%3A0x2a4472d4491506ee!2sHouse%20of%20Miracle%20Ministry!5e0!3m2!1sen!2sgh!4v1727286292645!5m2!1sen!2sgh" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 

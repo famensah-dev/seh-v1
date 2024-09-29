@@ -1,7 +1,7 @@
 <section>
     <div class="container position-relative">
         <div class="page-hero-content">
-            <h1 class="text-center"><?php echo $pageTitle; ?></h1>
+            <h1 class="text-center h-xl"><?php echo $pageTitle; ?></h1>
         </div>
     </div>
 </section>
