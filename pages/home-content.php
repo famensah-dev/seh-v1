@@ -137,10 +137,64 @@
     </section>
     <!-- Contact Us End -->
 
+    <style>
+
+        .accordion-item{
+            border: none;
+        }
+        .accordion-button{
+            font-weight: bold !important;
+            border-bottom: 1px solid #e5e5e5 !important;
+            border-radius: 8px 8px 0 0 !important;
+        }
+        .accordion-button:not(.collapsed){
+            background: var(--color-primary-light);
+            color: inherit;
+        }
+        .accordion-button:focus{
+            box-shadow: none;
+        }
+
+    </style>
+
+    <!-- FAQs -->
+     <?php 
+        include __DIR__ . '/../db_files/faqs.php'; 
+     ?>
+    <section class="cs-section">
+        <div class="text-center flex-col justify-center align-center gy-2 py-4">
+            <h2 class="h-xs text-center">Frequently Asked Questions</h2>
+            <h3 class="h-md">Find quick answers to common questions</h3>
+        </div>
+        <div class="container d-flex">
+            <div class="col-lg-5 col-12 mx-auto">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion" id="accordionExample">
+                        <?php foreach ($faqs as $index => $faq): ?>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $faq['id']; ?>" aria-expanded="false" aria-controls="collapse<?php echo $faq['id']; ?>">
+                                        <?php echo htmlspecialchars($faq['title']); ?>
+                                    </button>
+                                </h2>
+                                <div id="collapse<?php echo $faq['id']; ?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $faq['id']; ?>" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body p-sm">
+                                        <?php echo nl2br(htmlspecialchars($faq['content'])); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQS End -->
+
     <!-- Testimonials -->
 
     
-    <section class="cs-section">
+    <section class="cs-section bg-primary-light">
         <div class="text-center flex-col justify-center align-center gap">
             <h2 class="h-xs text-center">Testimonials</h2>
             <h3 class="h-md">Hear what our clients have to say about us.</h3>

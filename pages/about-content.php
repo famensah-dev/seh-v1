@@ -25,13 +25,15 @@
     }
     .page-hero-content{
         color: white;
-        height: 32vh;
+        height: 42vh;
         max-height: 380px;
         display: flex;
         align-items: center;
-        justify-content: center;
     }
 
+    .card i{
+        font-size: 1.5rem;
+    }
 
     /* GRID */
 
@@ -120,7 +122,7 @@
 
 <!-- Contact Content -->
 <?php
-$pageTitle = 'About Us'; 
+$pageTitle = 'About <span class="text-accent">Us</span>'; 
 $heroImage = '../assets/img/counsel.jpg'; 
 
 include 'partials/_page-hero.php';
@@ -129,44 +131,56 @@ include 'partials/_page-hero.php';
 <!-- About Us -->
 <section class="position-relative d-flex justify-content-center">
     <div class="page-intro">
-        <h2 class="text-center">
-        <span class="text-accent">Empowering</span> individuals to reach their full potential and make a positive community impact.
+        <h2 class="h-lg text-lg-center text-center">
+            Empowering individuals to reach their full potential and make a positive community impact.
         </h2>
     </div>
 </section>
-<section>
-    <div class="grid-col-4 bg-gradient-light">
-        <div class="column d-flex flex-column gap">
-            <i class="bi bi-flag"></i>
-            <div class="h-md">What We Stand For</div>
-            <div class="p-sm">At Empowerment Hub, we believe in the power of personalized coaching and mentorship. Whether you’re a student, young adult, professional, or community leader, we’re here to help you shape your success and make a lasting impact. Join us on this journey to empowerment and discover what you can achieve with the right support and guidance.</div>
+<section class="">
+    <div class="container row g-3">
+        <div class="col-lg-4 col-12">
+            <div class="card flex-fill h-100 d-flex align-items-center flex-column gap p-4">
+                <i class="bi bi-flag"></i>
+                <div class="h-sm">What We Stand For</div>
+                <div class="p-sm text-center">At Empowerment Hub, we believe in the power of personalized coaching and mentorship. Whether you’re a student, young adult, professional, or community leader, we’re here to help you shape your success and make a lasting impact. Join us on this journey to empowerment and discover what you can achieve with the right support and guidance.</div>
+            </div>
         </div>
-        <div class="column d-flex flex-column gap">
-            <i class="bi bi-briefcase"></i>
-            <div class="h-md">What We Do</div>
-            <div class="p-sm">At Empowerment Hub, we are dedicated to providing the guidance and support that students and young adults need to thrive. Founded by Ivy Aidoo, a passionate coach and mentor, our mission is to help individuals unlock their full potential and make a positive impact in their communities.</div>
+        <div class="col-lg-4 col-12">
+            <div class="card flex-fill h-100 d-flex align-items-center flex-column gap p-4">
+                <i class="bi bi-briefcase"></i>
+                <div class="h-sm">What We Do</div>
+                <div class="p-sm text-center">At Empowerment Hub, we are dedicated to providing the guidance and support that students and young adults need to thrive. Founded by Ivy Aidoo, a passionate coach and mentor, our mission is to help individuals unlock their full potential and make a positive impact in their communities.</div>
+            </div>
         </div>
-        <div class="column d-flex flex-column gap bg-dark">
-            <i class="bi bi-award"></i>
-            <div class="h-md">Our Mission</div>
-            <div class="p-sm">Our mission is to empower individuals from all walks of life, including university students, young adults, professionals, and community leaders. We aim to help them achieve their full potential and make a positive impact in their communities through personalized coaching, guidance, and support.</div>
+        <div class="col-lg-4 col-12">
+            <div class="card flex-fill h-100 d-flex align-items-center flex-column gap bg-dark p-4">
+                <i class="bi bi-award"></i>
+                <div class="h-sm">Our Mission</div>
+                <div class="p-sm text-center">Our mission is to empower individuals from all walks of life, including university students, young adults, professionals, and community leaders. We aim to help them achieve their full potential and make a positive impact in their communities through personalized coaching, guidance, and support.</div>
+            </div>
         </div>
 
-        <div class="column d-flex flex-column gap bg-dark-md">
-            <i class="bi bi-compass"></i>
-            <div class="h-md">Our Vision</div>
-            <div class="p-sm">To be the catalyst that transforms students, young adults, professionals, and leaders into empowered change-makers, guiding them to excel and create lasting impact in their communities.</div>
+        <div class="col-lg-4 col-12">
+            <div class="card flex-fill h-100 d-flex align-items-center flex-column gap bg-dark-md p-4">
+                <i class="bi bi-compass"></i>
+                <div class="h-sm">Our Vision</div>
+                <div class="p-sm text-center">To be the catalyst that transforms students, young adults, professionals, and leaders into empowered change-makers, guiding them to excel and create lasting impact in their communities.</div>
+            </div>
         </div>
-        <div class="column d-flex flex-column gap">
-            <i class="bi bi-stars"></i>
-            <div class="h-md">Who We Serve</div>
-            <div class="p-sm">We are dedicated to empowering a diverse range of individuals, including college students seeking guidance, young adults navigating their career paths, professionals aiming for growth, and community leaders making an impact.</div>
+        <div class="col-lg-4 col-12">
+            <div class="card flex-fill h-100 d-flex align-items-center flex-column gap p-4">
+                <i class="bi bi-stars"></i>
+                <div class="h-sm">Who We Serve</div>
+                <div class="p-sm text-center">We are dedicated to empowering a diverse range of individuals, including college students seeking guidance, young adults navigating their career paths, professionals aiming for growth, and community leaders making an impact.</div>
+            </div>
         </div>
-        <div class="column d-flex flex-column gap bg-accent">
-            <i class="bi bi-globe"></i>
-            <div class="h-md">Community Support</div>
-            <div class="p-sm">We gather and distribute gently used clothing, shoes, and personal items to individuals in need, uplifting vulnerable populations while fostering dignity and self-esteem.</div>
-            <a href="#" class="btn btn-accent-fill">Learn More</a>
+        <div class="col-lg-4 col-12">
+            <div class="card flex-fill h-100 d-flex align-items-center flex-column gap bg-accent p-4">
+                <i class="bi bi-globe"></i>
+                <div class="h-sm">Community Support</div>
+                <div class="p-sm text-center">We gather and distribute gently used clothing, shoes, and personal items to individuals in need, uplifting vulnerable populations while fostering dignity and self-esteem.</div>
+                <a href="#" class="btn btn-accent-fill">Learn More</a>
+        </div>
         </div>
     </div>
 </section>
@@ -218,13 +232,13 @@ include 'partials/_page-hero.php';
             <h3 class="h-md">Your Partners in Progress!</h3>
         </div>
     </div>
-    <div class="container row justify-content-center gap-lg">
+    <div class="container row justify-content-center g-4">
         <?php
             $teamMembers = include BASE_PATH . '/db_files/team-members.php';
             ?>
         <?php foreach($teamMembers as $member): ?>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="image-card border-bottom-accent-4">
+            <div class="col-lg-4 col-12">
+                <div class="image-card border-bottom-accent-4 rounded">
                     <div class="card-image" style="background-image:url('../assets/img/user.png')"></div>
                     <div class="card-body">
                         <div class="card-title h-sm"><?php echo htmlspecialchars($member['name']); ?></div>
