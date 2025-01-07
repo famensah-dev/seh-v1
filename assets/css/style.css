@@ -966,6 +966,14 @@ footer .company-info .contact-item{
     background-color: var(--light);
 }
 
+.page-intro{
+    width: 70%;
+    margin-top: -100px;
+    padding: 4rem 10%;
+    border: none;
+    background-color: white;
+}
+
 
 .fade-in{
     opacity: 0;
@@ -1111,6 +1119,11 @@ footer .company-info .contact-item{
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
+
+    .page-intro{
+        width: 70%;
+        margin-top: -80px;
+    }
     
 }
 
@@ -1136,6 +1149,7 @@ footer .company-info .contact-item{
         font-size: 2rem;
     }
     .nav{
+        top: 0 !important;
         /* padding: 0.8rem 0; */
         background: white;
         color: var(--color-primary-dark);
@@ -1423,6 +1437,11 @@ footer .company-info .contact-item{
         content: none;
     }
 
+    .page-intro{
+        width: 90%;
+        padding: 3rem 1rem;
+        margin-top: -10px;
+    }
 }
 
 

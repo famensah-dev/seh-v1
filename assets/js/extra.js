@@ -1,27 +1,93 @@
 
-const scrollLeftButton = document.getElementById('scroll-left-button');
-const scrollRightButton = document.getElementById('scroll-right-button');
-const scrollContainer = document.querySelector('.scroll-container');
+// const scrollLeftButton = document.getElementById('scroll-left-button');
+// const scrollRightButton = document.getElementById('scroll-right-button');
+// const scrollContainer = document.querySelector('.scroll-container');
 
-scrollLeftButton.addEventListener('click', scrollLeft);
-scrollRightButton.addEventListener('click', scrollRight);
+// scrollLeftButton.addEventListener('click', scrollLeft);
+// scrollRightButton.addEventListener('click', scrollRight);
 
 
-function scrollLeft() {
-    const scrollContainer = document.querySelector('.scroll-container');
-    scrollContainer.scrollBy({
-        left: -scrollContainer.offsetWidth,
+// function scrollLeft() {
+//     const scrollContainer = document.querySelector('.scroll-container');
+//     scrollContainer.scrollBy({
+//         left: -scrollContainer.offsetWidth,
+//         behavior: 'smooth'
+//     });
+// }
+
+// function scrollRight() {
+//     const scrollContainer = document.querySelector('.scroll-container');
+//     scrollContainer.scrollBy({
+//         left: scrollContainer.offsetWidth,
+//         behavior: 'smooth'
+//     });
+// }
+
+
+function initializeScrollContainers() {
+    const scrollContainers = document.querySelectorAll('.scroll-container');
+
+    scrollContainers.forEach(container => {
+        const scrollLeftButton = container.previousElementSibling.querySelector('#scroll-left-button');
+        const scrollRightButton = container.previousElementSibling.querySelector('#scroll-right-button');
+        const cards = container.querySelectorAll('.media-card');
+        const cardWidth = cards[0].offsetWidth;
+
+        scrollLeftButton.addEventListener('click', function() {
+            scrollLeft(container, cardWidth);
+        });
+        scrollRightButton.addEventListener('click', function() {
+            scrollRight(container, cardWidth);
+        });
+
+        // Auto scroll for each container
+        setAutoScroll(container, cardWidth);
+    });
+}
+
+function scrollLeft(container, cardWidth) {
+    container.scrollBy({
+        left: -cardWidth,
         behavior: 'smooth'
     });
 }
 
-function scrollRight() {
-    const scrollContainer = document.querySelector('.scroll-container');
-    scrollContainer.scrollBy({
-        left: scrollContainer.offsetWidth,
+function scrollRight(container, cardWidth) {
+    container.scrollBy({
+        left: cardWidth,
         behavior: 'smooth'
     });
 }
+
+function autoScrollRight(container, cardWidth) {
+    if (container.scrollLeft + container.offsetWidth >= container.scrollWidth - 5) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+        container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+}
+
+function setAutoScroll(container, cardWidth) {
+    let interval;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+        interval = 8000; // 8 seconds for mobile
+    } else {
+        interval = 15000; // 15 seconds for desktop
+    }
+
+    setInterval(() => autoScrollRight(container, cardWidth), interval);
+}
+
+// Initialize scroll on page load
+document.addEventListener('DOMContentLoaded', initializeScrollContainers);
+
+// Reinitialize scroll after HTMX swap
+document.body.addEventListener('htmx:afterSwap', function(event) {
+    initializeScrollContainers();
+});
+
 
 
 // function scrollRight() {
@@ -35,30 +101,30 @@ function scrollRight() {
 
 // setInterval(scrollRight, 10000);
 
-function autoScrollRight() {
-    const scrollContainer = document.querySelector('.scroll-container');
-    if (scrollContainer.scrollLeft + scrollContainer.offsetWidth >= scrollContainer.scrollWidth) {
-        scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-        scrollContainer.scrollBy({ left: scrollContainer.offsetWidth, behavior: 'smooth' });
-    }
-}
+// function autoScrollRight() {
+//     const scrollContainer = document.querySelector('.scroll-container');
+//     if (scrollContainer.scrollLeft + scrollContainer.offsetWidth >= scrollContainer.scrollWidth) {
+//         scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+//     } else {
+//         scrollContainer.scrollBy({ left: scrollContainer.offsetWidth, behavior: 'smooth' });
+//     }
+// }
 
-function setScrollInterval() {
-    let interval;
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+// function setScrollInterval() {
+//     let interval;
+//     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    if (isMobile) {
-        interval = 8000; // 3 seconds for mobile
-    } else {
-        interval = 15000; // 5 seconds for desktop
-    }
+//     if (isMobile) {
+//         interval = 8000; // 3 seconds for mobile
+//     } else {
+//         interval = 15000; // 5 seconds for desktop
+//     }
 
-    setInterval(autoScrollRight, interval);
-}
+//     setInterval(autoScrollRight, interval);
+// }
 
-setScrollInterval();
-window.addEventListener('resize', setScrollInterval);
+// setScrollInterval();
+// window.addEventListener('resize', setScrollInterval);
 
 
 // const cards = document.querySelectorAll('.card-testimonial');

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {   
   const currentUrl = window.location.href;  
   const navbar = document.getElementById('navbar');
-  const navLinks = document.querySelectorAll('nav a');
+  // const navLinks = document.querySelectorAll('nav a');
   const navMenuLinks = document.querySelectorAll('#nav-menu a');
   const logoImg = document.getElementById('logo');
 
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-  navLinks.forEach(el => el.addEventListener('click', scrollToSection));
-  navMenuLinks.forEach(el => el.addEventListener('click', scrollToSection));
+  // navLinks.forEach(el => el.addEventListener('click', scrollToSection));
+  // navMenuLinks.forEach(el => el.addEventListener('click', scrollToSection));
 
   function scrollToSection(event){
     closeNavMenu();
@@ -204,4 +204,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
   });
+
+
+
+  var bioModal = document.getElementById('bioModal');
+    bioModal.addEventListener('show.bs.modal', function (event) {
+      // Button that triggered the modal
+      var button = event.relatedTarget;
+      // Extract info from data attributes
+      var name = button.getAttribute('data-name');
+      var position = button.getAttribute('data-position');
+      var bio = button.getAttribute('data-bio');
+      var image = button.getAttribute('data-image'); // Get image URL
+  
+      // Update the modal content
+      var modalTitle = bioModal.querySelector('.modal-title');
+      var modalName = bioModal.querySelector('#modalName');
+      var modalPosition = bioModal.querySelector('#modalPosition');
+      var modalBio = bioModal.querySelector('#modalBio');
+      var modalImage = bioModal.querySelector('#modalImage');
+  
+      // modalTitle.textContent = name + "'s Bio";
+      modalName.textContent = name;
+      modalPosition.textContent = position;
+      modalBio.textContent = bio;
+      modalImage.style.backgroundImage = `url('${image}')`; 
+  });
+  
   

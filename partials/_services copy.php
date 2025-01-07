@@ -167,69 +167,75 @@
                 <h3 class="h-md">Unlock Your True Potential with Our Personalized Coaching Services</h3>
             </div>
         </div>
-        <div class="py-4 overflow-hidden">
-            <div class="services-swiper position-relative">
-                <div class="swiper-wrapper">
+        <div class="py-4">
+            <div class="position-relative">
+                <div class="scroll-buttons-container">
+                    <button id="scroll-left-button" class="scroll-button"><i class="uil uil-angle-left-b"></i></button>
+                    <button id="scroll-right-button" class="scroll-button"><i class="uil uil-angle-right-b"></i></button>
+                </div>
+                <div class="position-relative d-flex flex-nowrap scrollbar-custom scroll-snap-container scroll-container ml-2 py-4" style="overflow-x:auto; gap:1.5rem;">
+
+                <!-- <div class="swiper-services">
+                    <div class="swiper-wrapper">
                     <?php
                         foreach ($services as $data) {
-                            echo '<div class="swiper-slide">';
+                            echo '<div class="swiper-slider">';
                             include 'components/media-card.php';
                             echo '</div>';
                         }
                     ?>
+                    </div>
+                </div> -->
+                    
+                    <!-- <div class="media-card scroll-item" style="background: url();">
+                        <div class="card-content">
+                            <h3 class="card-title">Card Title 5</h3>
+                            <p class="card-description">This is some descriptive text that goes inside the card.</p>
+                        </div>
+                    </div> -->
                 </div>
-                <!-- Navigation buttons -->
-                <div class="services-nav swiper-button-prev"></div>
-                <div class="services-nav swiper-button-next"></div>
-                <div class="services-pagination swiper-pagination"></div>
             </div>
         </div>
 
+        <div class="swiper services-swiper">
+            <div class="swiper-wrapper">
+            <?php
+                foreach ($services as $data) {
+                    echo '<div class="swiper-slide">';
+                    include 'components/media-card.php';
+                    echo '</div>';
+                }
+            ?>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </div>
 </section>
 <style>
     .services-swiper{
-        /* width: 100%; */
+        width: 100%;
     }
 
     .services-swiper .swiper-slide{
-        width: fit-content;
-        min-width: 250px;
+        width: 25%;
     }
-
-    .services-nav.swiper-button-next,
-    .services-nav.swiper-button-prev{
-        max-width: 4rem;
-        max-height: 4rem;
-        min-width: 4rem;
-        min-height: 4rem;
-        border-radius: 50%;
-        border: none;
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-        color: var(--color-accent);
-        position: absolute;
-        z-index: 2;
-        transform: translateY(0%);
-    }
-    .services-nav.swiper-button-next::after,
-    .services-nav.swiper-button-prev::after
-    {
-        font-size: 1.4rem;
-        font-weight: bold;
-    }
-
-    .services-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
-        background: var(--color-accent);
-    }
-
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function(){
 
         const servicesSwiper = new Swiper('.services-swiper', {
-            slidesPerView: 'auto',
+        // speed: 400,
+        // slidesPerView: 5,
+        // spaceBetween: 10,
+    
+    
+        slidesPerView: 'auto',
                 centeredSlides: true,
                 loop: true,
                 spaceBetween: 14,
@@ -243,12 +249,12 @@
                 effect: 'slide',
                 easing: 'ease-in-out',
                 pagination: {
-                    el: '.services-pagination.swiper-pagination',
+                    el: '.swiper-pagination',
                     clickable: true,
                 },
                 navigation: {
-                    nextEl: '.services-nav.swiper-button-next',
-                    prevEl: '.services-nav.swiper-button-prev',
+                    nextEl: '.swiper-gallery .swiper-button-next',
+                    prevEl: '.swiper-gallery .swiper-button-prev',
                 },
     
       });

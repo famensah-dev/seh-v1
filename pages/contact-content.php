@@ -25,7 +25,7 @@
     }
     .page-hero-content{
         color: white;
-        height: 42vh;
+        height: 32vh;
         max-height: 380px;
         display: flex;
         align-items: center;
