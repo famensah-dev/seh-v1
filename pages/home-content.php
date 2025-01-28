@@ -4,7 +4,7 @@
 <section class="hero container">
     <div class="content">
         <div class="flex-col align-center">
-            <h1 class="h-xs" style="margin-top:10vh;">Social Empowerment Hub</h1>
+            <h1 class="h-xs h-title" style="margin-top:10vh;">Social Empowerment Hub</h1>
             <h2 class="h-xl">
                 You are Empowered. <span>You are Capable. </span><br>You are Unstoppable.
             </h2>
@@ -22,7 +22,10 @@
 <section class="bg-color-dark">
     <div class="hero-cards container scrollbar-custom">
     <div class="hero-card">
-        <div><i class="uil uil-star"></i></div>
+        <div>
+            <!-- <i class="uil uil-star"></i> -->
+            <i class="bi bi-mortarboard"></i>
+        </div>
         <div class="content">
             <h3 class="h-xs">Academic Support</h3>
             <p class="p-xs">Elevate Your Learning Journey</p>
@@ -36,7 +39,10 @@
         </div>
     </div>
     <div class="hero-card">
-        <div><i class="uil uil-thumbs-up"></i></div>
+        <div>
+            <!-- <i class="uil uil-thumbs-up"></i> -->
+            <i class="uil uil-star"></i>
+        </div>
         <div class="content">
             <h3 class="h-xs">Mentorship Schemes</h3>
             <p class="p-xs">Career Advancement</p>
@@ -54,33 +60,45 @@
 
 <main>
     <!-- About -->
-    <section id="about" class="cs-section container row gap-md">
-        <div class="content flex-col gap-lg">
-        <div class="d-flex gap-md">
+    <section id="about" class="cs-section container">
+        <div class="row align-items-stretch">
+            <!-- Image Section -->
             <div 
-                class="image-container" style="background-image: url('../assets/img/about-img.jpg')">
+                class="col-md-6 col-12 d-flex" 
+                style="background-image: url('../assets/img/about-img.jpg'); background-size: cover; background-position: center; min-height: 100%; border-radius: 1rem;">
             </div>
-            <div class="flex-col flex-grow gap">
-                <h2 class="h-xs">About Us</h2>
-                <h3 class="h-md text-blue">We Support Your Goals</h3>
-                <div class="hr hr-thick hr-md hr-accent"></div>
-                <p class="p-sm" style="text-align: justify;">At Empowerment Hub, we believe in the power of community, support, and resources to help you achieve your goals and dreams. Our platform is designed to empower you with the tools, knowledge, and connections you need to succeed. <br><br>
-                Whether you’re a student, professional, or simply looking for personal growth, we’re here to support you every step of the way. Our community is built on values of inclusivity, diversity, and empathy, and we’re committed to creating a safe and supportive environment for all.</p>
-                <a href="#" style="width: fit-content;" class="p-sm btn btn-accent-fill">Read More <i class="uil uil-angle-right-b" style="font-size: 1rem;;"></i></a>
+            <!-- Content Section -->
+            <div class="col-md-5 col-12 d-flex flex-column" style="margin-left: auto;">
+                <h2 class="h-xs h-title">About Us</h2>
+                <h3 class="h-md">We believe in the power of community and support to help you achieve your dreams</h3>
+                <br>
+                <p class="text-justify p-sm"> 
+                    Our platform is designed to empower you with the tools, knowledge, and connections you need to succeed. <br>
+                    Whether you’re a student, professional, or simply looking for personal growth, we’re here to support you every step of the way. 
+                    Our community is built on values of inclusivity, diversity, and empathy, and we’re committed to creating a safe and supportive environment for all.
+                </p>
+                <br>
+                <a href="#" class="btn btn-accent-outline align-items-center mt-auto" style="width: fit-content;">
+                    Read More <i class="uil uil-angle-right-b ms-2"></i>
+                </a>
             </div>
         </div>
     </section>
+
+
     <!-- About End -->
 
     <!-- Services -->
-    <?php include('partials/_services.php') ?>
+     <section class="cs-section bg-light">
+         <?php include('partials/_services.php') ?>
+     </section>
     <!-- Services End -->
 
     <!-- Contact Us -->
     <section id="contact" class="cs-section contact-us contact-bg-image" style="background-image: url('../assets/img/contact-img.jpg');">
         <div class="container flex-col gap align-center">
             <div class="text-center flex-col justify-center align-center gap">
-                <h2 class="h-xs text-white">Contact Us</h2>
+                <h2 class="h-xs h-title text-white">Contact Us</h2>
                 <h3 class="h-md text-white">Have questions or inquiries? Feel free to reach out to us!</h3>
                 <!-- <div class="hr hr-thick hr-md hr-accent"></div> -->
             </div>
@@ -88,19 +106,22 @@
                 <div class="contact-info flex-col gap-md">
                     <h3 class="h-md">Contact Info</h3>
                     <div class="flex justify-start p-xs">
-                        <i class="uil uil-map-marker"></i>
+                        <!-- <i class="uil uil-map-marker"></i> -->
+                        <i class="bi bi-pin-map"></i>
                         <span class="word-wrap">
                             19 Dzanifio Street, Bawaleshie, East – Legon
                         </span>
                     </div>
                     <div class="flex justify-start p-xs">
-                        <i class="uil uil-envelope-alt"></i>
+                        <!-- <i class="uil uil-envelope-alt"></i> -->
+                        <i class="bi bi-envelope-at"></i>
                         <span class="word-wrap">
                             info@socialempowermenthub.com
                         </span>
                     </div>
                     <div class="flex justify-start p-xs">
-                        <i class="uil uil-clock-nine"></i>
+                        <!-- <i class="uil uil-clock-nine"></i> -->
+                        <i class="bi bi-clock"></i>
                         <span>
                             Mon - Fri, 9 a.m. – 5 p.m.
                         </span>
@@ -128,7 +149,11 @@
                         <textarea name="message" id="message" class="contact-form-field" rows="4" placeholder="Your message" required></textarea>
                     </div>
                     <button id="btnSpinner" class="btn btn-primary-dark-fill" type="button" onClick="submitForm()">
-                        <span class="btn-spinner">Send Message <i class="uil uil-message text-accent"></i></span>
+                        <span class="btn-spinner">
+                            <span>Send Message</span>
+                            <i class="bi bi-arrow-right text-accent"></i>
+                            <!-- <i class="uil uil-message text-accent"></i> -->
+                        </span>
                     </button>
                 </form>
             
@@ -143,13 +168,15 @@
             border: none;
         }
         .accordion-button{
-            font-weight: bold !important;
+            font-weight: 600 !important;
             border-bottom: 1px solid #e5e5e5 !important;
-            border-radius: 8px 8px 0 0 !important;
         }
         .accordion-button:not(.collapsed){
             background: var(--color-primary-light);
             color: inherit;
+        }
+        .accordion-button:not(.collapsed):first{
+            border-radius: 8px 8px 0 0 !important;
         }
         .accordion-button:focus{
             box-shadow: none;
@@ -163,7 +190,7 @@
      ?>
     <section class="cs-section">
         <div class="text-center flex-col justify-center align-center gy-2 py-4">
-            <h2 class="h-xs text-center">Frequently Asked Questions</h2>
+            <h2 class="h-xs h-title text-center">Frequently Asked Questions</h2>
             <h3 class="h-md">Find quick answers to common questions</h3>
         </div>
         <div class="container d-flex">
@@ -172,7 +199,7 @@
                     <div class="accordion" id="accordionExample">
                         <?php foreach ($faqs as $index => $faq): ?>
                             <div class="accordion-item">
-                                <h2 class="accordion-header">
+                                <h2 class="accordion-header h-sm">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $faq['id']; ?>" aria-expanded="false" aria-controls="collapse<?php echo $faq['id']; ?>">
                                         <?php echo htmlspecialchars($faq['title']); ?>
                                     </button>
@@ -196,7 +223,7 @@
     
     <section class="cs-section bg-primary-light">
         <div class="text-center flex-col justify-center align-center gap">
-            <h2 class="h-xs text-center">Testimonials</h2>
+            <h2 class="h-xs h-title text-center">Testimonials</h2>
             <h3 class="h-md">Hear what our clients have to say about us.</h3>
         </div>
         <?php 

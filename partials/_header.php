@@ -40,7 +40,15 @@
             <ul class="navlinks flex gap-md">
                 <li><a href="index.php" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Home</a></li>
                 <li><a href="about.php" class="<?= $currentPage == 'about.php' ? 'active' : '' ?>">About</a></li>
-                <li><a href="services.php" class="<?= $currentPage == 'services.php' ? 'active' : '' ?>">Services</a></li>
+                <li class="dropdown">
+                    <a href="services.php" class="dropdown-toggle <?= $currentPage == 'services.php' || $currentPage == 'elderly-care.php' ? 'active' : '' ?>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="elderly-care.php" class="<?= $currentPage == 'elderly-care.php' ? 'active' : '' ?>">Elderly Care</a>
+                        <a class="dropdown-item" href="services.php" class="<?= $currentPage == 'service3.php' ? 'active' : '' ?>">Students Support</a>
+                        <a class="dropdown-item" href="services.php#parents-corner" class="<?= $currentPage == 'service1.php' ? 'active' : '' ?>">Parents' Corner</a>
+                        <a class="dropdown-item" href="services.php#childrens-corner" class="<?= $currentPage == 'service2.php' ? 'active' : '' ?>">Children's Corner</a>
+                    </div>
+                </li>
                 <li><a href="#about" class="<?= $currentPage == 'community-support.php' ? 'active' : '' ?>">Community Support</a></li>
                 <li><a href="../contact.php" class="<?= $currentPage == 'contact.php' ? 'active' : '' ?>">Contact</a></li>
                 <li><a href="#contact" class="text-accent-alt" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Donate</a></li>
@@ -73,7 +81,15 @@
             <ul class="gap-md">
                 <li><a href="index.php" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Home</a></li>
                 <li><a href="about.php" class="<?= $currentPage == 'about.php' ? 'active' : '' ?>">About</a></li>
-                <li><a href="services.php" class="<?= $currentPage == 'services.php' ? 'active' : '' ?>">Services</a></li>
+                <li class="has-subnav">
+                    <a href="#" onclick="toggleSubnav(event)" class="<?= $currentPage == 'services.php' || $currentPage == 'elderly-care.php' ? 'active' : '' ?>">Services</a>
+                    <ul class="subnav hidden">
+                        <li><a class="dropdown-item" href="elderly-care.php" class="<?= $currentPage == 'elderly-care.php' ? 'active' : '' ?>">Elderly Care</a></li>
+                        <li><a class="dropdown-item" href="services.php" class="<?= $currentPage == 'service3.php' ? 'active' : '' ?>">Students Support</a></li>
+                        <li><a class="dropdown-item" href="services.php#parents-corner" class="<?= $currentPage == 'service1.php' ? 'active' : '' ?>">Parents' Corner</a></li>
+                        <li><a class="dropdown-item" href="services.php#childrens-corner" class="<?= $currentPage == 'service2.php' ? 'active' : '' ?>">Children's Corner</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.php" class="<?= $currentPage == 'community-support.php' ? 'active' : '' ?>">Community Support</a></li>
                 <li><a href="contact.php" class="<?= $currentPage == 'contact.php' ? 'active' : '' ?>">Contact</a></li>
             </ul>

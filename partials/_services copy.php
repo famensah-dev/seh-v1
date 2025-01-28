@@ -162,7 +162,7 @@
     <div class="container">
         <div class="content container flex-col gap-lg">
             <div class="text-center d-flex flex-column align-items-center" style="gap: 1rem;">
-                <h2 class="h-xs">Our Services</h2>
+                <h2 class="h-xs h-title">Our Services</h2>
                 <div class="hr hr-md hr-accent hr-thick"></div>
                 <h3 class="h-md">Unlock Your True Potential with Our Personalized Coaching Services</h3>
             </div>

@@ -2,6 +2,7 @@
 <?php
     $pageSpecificJs = '../assets/js/services-swiper.js'; 
     include __DIR__ . '/../db_files/services-data.php'; 
+    $currentPage = basename($_SERVER['PHP_SELF']); // Get the current file name
 ?>
 
 <style>
@@ -158,35 +159,48 @@
 }
 </style>
 
-<section class="cs-section bg-primary-light">
-    <div class="container">
-        <div class="content container flex-col gap-lg">
-            <div class="text-center d-flex flex-column align-items-center" style="gap: 1rem;">
-                <h2 class="h-xs">Our Services</h2>
-                <div class="hr hr-md hr-accent hr-thick"></div>
+<div class="container">
+    <div>
+        <h2 class="h-xs h-title">Our Services</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-12">
                 <h3 class="h-md">Unlock Your True Potential with Our Personalized Coaching Services</h3>
             </div>
-        </div>
-        <div class="py-4 overflow-hidden">
-            <div class="services-swiper position-relative">
-                <div class="swiper-wrapper">
-                    <?php
-                        foreach ($services as $data) {
-                            echo '<div class="swiper-slide">';
-                            include 'components/media-card.php';
-                            echo '</div>';
-                        }
-                    ?>
+            <div class="col-md-6 col-12 p-sm d-flex gap justify-content-between align-items-start">
+                <div>
+                    From one-on-one coaching to group workshops and specialized programs, we provide a wide range of services to suit your needs.
                 </div>
-                <!-- Navigation buttons -->
-                <div class="services-nav swiper-button-prev"></div>
-                <div class="services-nav swiper-button-next"></div>
-                <div class="services-pagination swiper-pagination"></div>
+
+                <?php if ($currentPage !== 'services.php') { ?>
+                    <div>
+                        <a href="services.php" class="btn btn-primary-dark-outline" style="width: fit-content;">LearnMore</a>
+                    </div>
+                <?php } ?>
             </div>
         </div>
-
     </div>
-</section>
+    <br><br><br>
+    <div class="py-4 overflow-hidden">
+        <div class="services-swiper position-relative">
+            <div class="swiper-wrapper">
+                <?php
+                    foreach ($services as $data) {
+                        echo '<div class="swiper-slide">';
+                        include 'components/media-card.php';
+                        echo '</div>';
+                    }
+                ?>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="services-nav swiper-button-prev"></div>
+            <div class="services-nav swiper-button-next"></div>
+            <div class="services-pagination swiper-pagination"></div>
+        </div>
+    </div>
+
+</div>
+
 <style>
     .services-swiper{
         /* width: 100%; */

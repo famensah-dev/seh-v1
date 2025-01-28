@@ -32,22 +32,6 @@
         justify-content: center;
     }
 
-
-    /* GRID */
-
-    .grid-col-4 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); 
-    }
-
-    .column {
-        padding: clamp(3rem, 5vw, 4rem);
-        text-align: center;
-        order: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
     .bg-dark {
         background-color: var(--color-primary-dark-alt);
         color: white;
@@ -62,9 +46,6 @@
     }
 
     @media(max-width: 1024px) {
-        .grid-col-4 {
-            grid-template-columns: repeat(2, 1fr); 
-        }
         .bg-dark-md{
             background-color: var(--color-primary-dark-alt);
             color: white;
@@ -76,44 +57,10 @@
             height: 60vh;
             max-height: 340px;
         }
-        .grid-col-4 {
-            grid-template-columns: 1fr; /* One column on mobile */
-        }
-        
-        .grid-col-4 .column {
-            order: 0; /* Reset the order for all items */
-        }
-
-        .grid-col-4 .column:nth-child(2) {
-            order: 2; /* Move the second item to the third position */
-        }
-
-        .grid-col-4 .column:nth-child(3) {
-            order: 1; /* Move the third item to the second position */
-        }
-
-        /* Keep the order of other items unchanged */
-        .grid-col-4 .column:nth-child(1) {
-            order: 0; /* First item remains first */
-        }
-        
-        .grid-col-4 .column:nth-child(4) {
-            order: 3; /* Fourth item remains fourth */
-        }
-
-        .grid-col-4 .column:nth-child(5) {
-            order: 4; /* Fifth item remains fifth */
-        }
-
-        .grid-col-4 .column:nth-child(6) {
-            order: 5; /* Sixth item remains sixth */
-        }
     }
 
     @media (max-width: 500px){
-        .column{
-            padding: 2.5rem 2rem;
-        }
+
     }
 </style>
 
@@ -128,7 +75,7 @@ include 'partials/_page-hero.php';
 
 <!-- About Us -->
 <section class="cs-section">
-    <div class="container" style="width: 70%;;">
+    <div class="container" style="width: 70%;">
         <h2 class="text-center">
         <span class="text-accent">Empowering</span> individuals to reach their full potential and make a positive community impact.
         </h2>
@@ -161,7 +108,7 @@ include 'partials/_page-hero.php';
 <section class="cs-section">
     <div class="container py-4 mb-4 ms-mb-2">
         <div class="text-center flex-col justify-center align-center gap">
-            <h2 class="h-xs">Meet the Team</h2>
+            <h2 class="h-xs h-title">Meet the Team</h2>
             <h3 class="h-md">Your Partners in Progress!</h3>
         </div>
     </div>

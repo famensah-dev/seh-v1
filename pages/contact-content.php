@@ -1,71 +1,40 @@
 <?php include 'config.php'; ?>
 
-<style>
-    .page-hero-image{
-        height: calc(50vh + 4rem);
-        max-height: 450px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        z-index: -1;
-        background-image: url('../assets/img/about-img.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center 25%;
-    }
-    .page-hero-image::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7); 
-        z-index: -1;
-    }
-    .page-hero-content{
-        color: white;
-        height: 32vh;
-        max-height: 380px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    @media (max-width: 767px){
-        .page-hero-content{
-            height: 60vh;
-            max-height: 340px;
-        }
-    }
-
-    @media (max-width: 500px){
-        
-    }
-</style>
-
-
 <!-- Contact Content -->
 <?php
 $pageTitle = 'Contact Us'; 
 $heroImage = '../assets/img/contact-img.jpg'; 
 
-include 'partials/_page-hero.php';
+// include 'partials/_page-hero.php';
 ?>
 
-<!-- Contact Us -->
-<section id="contact" class="cs-section contact-us" style="padding-bottom: 0;">
-    <div class="container flex-col gap align-center">
-        <div class="text-center flex-col justify-center align-center gap">
-            <h3 class="h-md py-2">We'd love to hear from you! Reach out to us anytime.</h3>
-            <!-- <div class="hr hr-thick hr-md hr-accent"></div> -->
+<section class="background-image-section" style="background-image: url('../assets/img/contact-img.jpg');"></section>
+
+<section class="position-relative mb-4 pb-4 page-hero-section">
+    <div class="row container d-flex justify-content-center">
+        <div class="col-md-4 col-12 p-4 dark-background">
+            <div class="content-padding">
+                <h1 class="h-lg mb-0 px-2 py-1">Contact <span class="text-accent">Us</span></h1>
+            </div>
         </div>
+        <div class="col-md-6 col-12 p-2 white-background content-shadow">
+            <div class="scope-content">
+                <p class="p-sm">We are more than happy to hear from you. Reach out to us anytime!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us -->
+<section class="cs-section contact-us pb-2 mt-4">
+    <div class="container flex-col gap align-center">
         <div class="d-flex gap-lg content align-top">
             <div class="contact-info flex-col gap">
                 <h3 class="h-md">Contact Info</h3>
                 <div class="flex justify-start p-xs text">
                     <span class="text-accent">
-                        <i class="uil uil-map-marker"></i>
+                        <!-- <i class="uil uil-map-marker"></i> -->
+                        <i class="bi bi-pin-map"></i>
                     </span>
                     <span class="word-wrap">
                         19 Dzanifio Street, Bawaleshie, East – Legon
@@ -73,7 +42,8 @@ include 'partials/_page-hero.php';
                 </div>
                 <div class="flex justify-start p-xs">
                     <span class="text-accent">
-                        <i class="uil uil-envelope-alt"></i>
+                        <!-- <i class="uil uil-envelope-alt"></i> -->
+                        <i class="bi bi-envelope-at"></i>
                     </span>
                     <span class="word-wrap">
                         info@socialempowermenthub.com
@@ -81,7 +51,8 @@ include 'partials/_page-hero.php';
                 </div>
                 <div class="flex justify-start p-xs">
                     <span class="text-accent">
-                        <i class="uil uil-clock-nine"></i>
+                        <!-- <i class="uil uil-clock-nine"></i> -->
+                        <i class="bi bi-clock"></i>
                     </span>
                     <span>
                         Mon - Fri, 9 a.m. – 5 p.m.
@@ -135,7 +106,8 @@ include 'partials/_page-hero.php';
         map-id="DEMO_MAP_ID"
         style="height: 400px"
         ></gmp-map> -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.2869323481086!2d-0.15828452496660425!3d5.671591594309971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9d995380f175%3A0x2a4472d4491506ee!2sHouse%20of%20Miracle%20Ministry!5e0!3m2!1sen!2sgh!4v1727286292645!5m2!1sen!2sgh" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.464748715718!2d-0.1673615249667962!3d5.645694094335571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9ca76aeb41d3%3A0x6f88589a29964ff6!2sDzanifio%20St%2C%20Accra!5e0!3m2!1sen!2sgh!4v1738042754559!5m2!1sen!2sgh" width="600" height="450" style="border:0; width: 100%; height:50vh;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.2869323481086!2d-0.15828452496660425!3d5.671591594309971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9d995380f175%3A0x2a4472d4491506ee!2sHouse%20of%20Miracle%20Ministry!5e0!3m2!1sen!2sgh!4v1727286292645!5m2!1sen!2sgh" width="" height="" style="border:0; width: 100%; height:50vh;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 </section>
 
 

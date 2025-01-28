@@ -205,6 +205,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
+  function toggleSubnav(event) {
+      event.preventDefault();
+      const subnav = event.target.nextElementSibling;
+      subnav.classList.toggle("active");
+  }
 
 
   var bioModal = document.getElementById('bioModal');
